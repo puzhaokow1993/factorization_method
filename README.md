@@ -112,8 +112,30 @@ where ![\sigma_{1},\cdots,\sigma_{M}](https://latex.codecogs.com/png.image?\dpi{
 
 # Numerical reconstriction for impedance obstacles # 
 
-We now explain the algorithm which used to reconstruct impedancec obstacles (which is a general case including sound-soft, sound-hard and Robin obstacles). 
+We now explain the algorithm which used to reconstruct impedancec obstacles (which is a general case including sound-soft, sound-hard and Robin obstacles). In this case, the matrix ![\tilde{F}_{D}](https://latex.codecogs.com/png.image?\dpi{110}\tilde{F}_{D}) is not necessarily diagonalizable. However, we see that 
+<div align="center">
+  
+![\Re\tilde{F}_{D}:=\frac{1}{2}(\tilde{F}_{D}+\tilde{F}_{D}^{*})](https://latex.codecogs.com/png.image?\dpi{110}\Re\tilde{F}_{D}:=\frac{1}{2}(\tilde{F}_{D}+\tilde{F}_{D}^{*})) and ![\Im\tilde{F}_{D}:=\frac{1}{2\mathbf{i}}(\tilde{F}_{D}-\tilde{F}_{D}^{*})](https://latex.codecogs.com/png.image?\dpi{110}\Im\tilde{F}_{D}:=\frac{1}{2\mathbf{i}}(\tilde{F}_{D}-\tilde{F}_{D}^{*}))
+</div>
 
+and self-adjoint matrices and hence diagonalizable with real eigenvalues. In view of the diagonalization forms of 
+<div align="center">
+  
+![\Re\tilde{F}_{D}=Q_{\Re}\Lambda_{\Re}Q_{\Re}^{-1}](https://latex.codecogs.com/png.image?\dpi{110}\Re\tilde{F}_{D}=Q_{\Re}\Lambda_{\Re}Q_{\Re}^{-1}) and ![\Im\tilde{F}_{D}=Q_{\Im}\Lambda_{\Im}Q_{\Im}^{-1}](https://latex.codecogs.com/png.image?\dpi{110}\Im\tilde{F}_{D}=Q_{\Im}\Lambda_{\Im}Q_{\Im}^{-1})
+</div>
 
+we can compute the ![\sigma_{1},\cdots,\sigma_{M}](https://latex.codecogs.com/png.image?\dpi{110}\sigma_{1},\cdots,\sigma_{M}) self-adjoint matrix 
+<div align="center">
+  
+![\tilde{F}_{\sharp}=Q_{\Re}|\Lambda_{\Re}|Q_{\Re}^{-1}+Q_{\Im}|\Lambda_{\Im}|Q_{\Im}^{-1}](https://latex.codecogs.com/png.image?\dpi{110}\tilde{F}_{\sharp}=Q_{\Re}|\Lambda_{\Re}|Q_{\Re}^{-1}+Q_{\Im}|\Lambda_{\Im}|Q_{\Im}^{-1}) 
+</div>
+
+where ![|\Lambda_{\Re}|](https://latex.codecogs.com/png.image?\dpi{110}|\Lambda_{\Re}|) (resp. ![|\Lambda_{\Im}|](https://latex.codecogs.com/png.image?\dpi{110}|\Lambda_{\Im}|)) is the diagonal matrix obtained by taking absolute value of its diagonal elements. Now, we consider the unitary diagonalization 
+<div align="center">
+  
+![\tilde{F}_{\sharp}=Q\Lambda%20Q^{-1}=Q\Lambda%20Q^{*}](https://latex.codecogs.com/png.image?\dpi{110}\tilde{F}_{\sharp}=Q\Lambda%20Q^{-1}=Q\Lambda%20Q^{*}). 
+</div>
+
+For each 
 
 [comment]: <> (https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)
