@@ -13,7 +13,9 @@ Let ![A(x)=(a_{ij}(x))](https://latex.codecogs.com/png.image?\dpi{110}A(x)=(a_{i
 ![c|\xi|^{2}\le\sum_{ij}a_{ij}(x)\xi_{i}\xi_{j}\le%20c^{-1}|\xi|^{2}](https://latex.codecogs.com/png.image?\dpi{110}c|\xi|^{2}\le\sum_{ij}a_{ij}(x)\xi_{i}\xi_{j}\le%20c^{-1}|\xi|^{2})
 </div>
 
-for all ![x\in\mathbb{R}^{d}](https://latex.codecogs.com/png.image?\dpi{110}x\in\mathbb{R}^{d}),![\xi\in\mathbb{R}^{d}](https://latex.codecogs.com/png.image?\dpi{110}\xi\in\mathbb{R}^{d}), ![d=2](https://latex.codecogs.com/png.image?\dpi{110}d=2) or ![3](https://latex.codecogs.com/png.image?\dpi{110}3). Moreover, we assume that ![{\rm%20supp}(A-I)](https://latex.codecogs.com/png.image?\dpi{110}{\rm%20supp}(A-I)) is compact in ![\mathbb{R}^{d}](https://latex.codecogs.com/png.image?\dpi{110}\mathbb{R}^{d}). Suppose that the acoustic refraction index ![n\in%20L^{\infty}(\mathbb{R}^{d})](https://latex.codecogs.com/png.image?\dpi{110}n\in%20L^{\infty}(\mathbb{R}^{d})) with ![n\ge%20c](https://latex.codecogs.com/png.image?\dpi{110}n\ge%20c), such that ![{\rm%20supp}(n-1)](https://latex.codecogs.com/png.image?\dpi{110}{\rm%20supp}(n-1)) is compact in ![\mathbb{R}^{d}](https://latex.codecogs.com/png.image?\dpi{110}\mathbb{R}^{d}). Let ![D](https://latex.codecogs.com/png.image?\dpi{110}D) be an open bounded domain with Lipschitz boudary ![\partial%20D](https://latex.codecogs.com/png.image?\dpi{110}\partial%20D) such that ![\overline{D}\subset%20B_{R}](https://latex.codecogs.com/png.image?\dpi{110}\overline{D}\subset%20B_{R}) and ![\mathbb{R}^{d}\setminus\overline{D}](https://latex.codecogs.com/png.image?\dpi{110}\mathbb{R}^{d}\setminus\overline{D}) is connected. Let ![u_{D}^{\rm%20to}(x,\hat{z})=u_{A,n}^{\rm%20inc}(x,\hat{z})+u_{D}^{\rm%20sc}(x,\hat{z})](https://latex.codecogs.com/png.image?\dpi{110}u_{D}^{\rm%20to}(x,\hat{z})=u_{A,n}^{\rm%20inc}(x,\hat{z})+u_{D}^{\rm%20sc}(x,\hat{z})) with an appropriate incident field ![u_{A,n}^{\rm%20inc}(x,\hat{z})](https://latex.codecogs.com/png.image?\dpi{110}u_{A,n}^{\rm%20inc}(x,\hat{z})) and the corresponding scattered field ![u_{D}^{\rm%20sc}(x,\hat{z})](https://latex.codecogs.com/png.image?\dpi{110}u_{D}^{\rm%20sc}(x,\hat{z})) satisfy the following acoustic equation: 
+for all ![x\in\mathbb{R}^{d}](https://latex.codecogs.com/png.image?\dpi{110}x\in\mathbb{R}^{d}),![\xi\in\mathbb{R}^{d}](https://latex.codecogs.com/png.image?\dpi{110}\xi\in\mathbb{R}^{d}), ![d=2](https://latex.codecogs.com/png.image?\dpi{110}d=2) or ![3](https://latex.codecogs.com/png.image?\dpi{110}3). Moreover, we assume that ![{\rm%20supp}(A-I)](https://latex.codecogs.com/png.image?\dpi{110}{\rm%20supp}(A-I)) is compact in ![\mathbb{R}^{d}](https://latex.codecogs.com/png.image?\dpi{110}\mathbb{R}^{d}). Suppose that the acoustic refraction index ![n\in%20L^{\infty}(\mathbb{R}^{d})](https://latex.codecogs.com/png.image?\dpi{110}n\in%20L^{\infty}(\mathbb{R}^{d})) with ![n\ge%20c](https://latex.codecogs.com/png.image?\dpi{110}n\ge%20c), such that ![{\rm%20supp}(n-1)](https://latex.codecogs.com/png.image?\dpi{110}{\rm%20supp}(n-1)) is compact in ![\mathbb{R}^{d}](https://latex.codecogs.com/png.image?\dpi{110}\mathbb{R}^{d}). 
+
+We model the (unknown) impenetrable obstacle by the open bounded domain ![D](https://latex.codecogs.com/png.image?\dpi{110}D) with Lipschitz boudary ![\partial%20D](https://latex.codecogs.com/png.image?\dpi{110}\partial%20D) such that ![\overline{D}\subset%20B_{R}](https://latex.codecogs.com/png.image?\dpi{110}\overline{D}\subset%20B_{R}) and ![\mathbb{R}^{d}\setminus\overline{D}](https://latex.codecogs.com/png.image?\dpi{110}\mathbb{R}^{d}\setminus\overline{D}) is connected. Let ![u_{D}^{\rm%20to}(x,\hat{z})=u_{A,n}^{\rm%20inc}(x,\hat{z})+u_{D}^{\rm%20sc}(x,\hat{z})](https://latex.codecogs.com/png.image?\dpi{110}u_{D}^{\rm%20to}(x,\hat{z})=u_{A,n}^{\rm%20inc}(x,\hat{z})+u_{D}^{\rm%20sc}(x,\hat{z})) with an appropriate incident field ![u_{A,n}^{\rm%20inc}(x,\hat{z})](https://latex.codecogs.com/png.image?\dpi{110}u_{A,n}^{\rm%20inc}(x,\hat{z})) and the corresponding scattered field ![u_{D}^{\rm%20sc}(x,\hat{z})](https://latex.codecogs.com/png.image?\dpi{110}u_{D}^{\rm%20sc}(x,\hat{z})) satisfy the following acoustic equation: 
 <div align="center">
   
 ![\nabla\cdot(A(x)\nabla%20u_{D}^{\rm%20to})+k^{2}n(x)u_{D}^{\rm%20to}=0](https://latex.codecogs.com/png.image?\dpi{110}\nabla\cdot(A(x)\nabla%20u_{D}^{\rm%20to})+k^{2}n(x)u_{D}^{\rm%20to}=0) in ![\mathbb{R}^{d}\setminus\overline{D}](https://latex.codecogs.com/png.image?\dpi{110}\mathbb{R}^{d}\setminus\overline{D})
@@ -28,5 +30,32 @@ for all ![x\in\mathbb{R}^{d}](https://latex.codecogs.com/png.image?\dpi{110}x\in
 </div>
 
 where ![\mathcal{B}u_{D}^{\rm%20to}](https://latex.codecogs.com/png.image?\dpi{110}\mathcal{B}u_{D}^{\rm%20to}) is either Dirichlet or impedance boundary conditions. Let ![u_{D}^{\infty}(\hat{x},\hat{z})](https://latex.codecogs.com/png.image?\dpi{110}u_{D}^{\infty}(\hat{x},\hat{z})) be the far-field pattern of ![u_{D}^{\rm%20sc}](https://latex.codecogs.com/png.image?\dpi{110}u_{D}^{\rm%20sc}). The inverse problem is to determine ![D](https://latex.codecogs.com/png.image?\dpi{110}D) from the knowledge of ![u_{D}^{\infty}(\hat{x},\hat{z})](https://latex.codecogs.com/png.image?\dpi{110}u_{D}^{\infty}(\hat{x},\hat{z})) for all ![\hat{x},\hat{z}\in\mathcal{S}^{d-1}](https://latex.codecogs.com/png.image?\dpi{110}\hat{x},\hat{z}\in\mathcal{S}^{d-1}). 
+
+# Algorithm # 
+
+We now explain the algorithm. In our simulation, we take ![A\equiv%20I](https://latex.codecogs.com/png.image?\dpi{110}A\equiv%20I) and 
+<div align="center">
+  
+![n(x,y)=1+e^{-\frac{1}{1+x^{2}+y^{2}}}](https://latex.codecogs.com/png.image?\dpi{110}n(x,y)=1+e^{-\frac{1}{1+x^{2}+y^{2}}}) for ![x^{2}+y^{2}<1](https://latex.codecogs.com/png.image?\dpi{110}x^{2}+y^{2}<1), otherwise ![n(x,y)=1](https://latex.codecogs.com/png.image?\dpi{110}n(x,y)=1)
+</div>
+
+which has jump discontinuities at ![x^{2}+y^{2}=1](https://latex.codecogs.com/png.image?\dpi{110}x^{2}+y^{2}=1). 
+
+We first need to find suitable incident fields to stimulate the impenetrable obstacle. We restrict the computational domain in the ball ![x^{2}+y^{2}<4](https://latex.codecogs.com/png.image?\dpi{110}x^{2}+y^{2}<4) and approximate the Sommerfeld radiation condition by the impedance condition: 
+<div align="center">
+  
+![\Delta\tilde{u}_{\rm%20ref}^{\rm%20sc}+k^{2}n\tilde{u}_{\rm%20ref}^{\rm%20sc}=k^{2}(1-n)u_{\rm%20ref}^{\rm%20inc}](https://latex.codecogs.com/png.image?\dpi{110}\Delta\tilde{u}_{\rm%20ref}^{\rm%20sc}+k^{2}n\tilde{u}_{\rm%20ref}^{\rm%20sc}=k^{2}(1-n)u_{\rm%20ref}^{\rm%20inc}) for ![x^{2}+y^{2}<4](https://latex.codecogs.com/png.image?\dpi{110}x^{2}+y^{2}<4)
+</div>
+<div align="center">
+  
+![\partial_{r}\tilde{u}_{\rm%20ref}^{\rm%20sc}-\mathbf{i}k\tilde{u}_{\rm%20ref}^{\rm%20sc}=0](https://latex.codecogs.com/png.image?\dpi{110}\partial_{r}\tilde{u}_{\rm%20ref}^{\rm%20sc}-\mathbf{i}k\tilde{u}_{\rm%20ref}^{\rm%20sc}=0) for ![x^{2}+y^{2}=4](https://latex.codecogs.com/png.image?\dpi{110}x^{2}+y^{2}=4)
+</div>
+
+We solve this boundary value problem FEM with mesh size ![\le0.1](https://latex.codecogs.com/png.image?\dpi{110}\le0.1). Then we can approximate the total field by ![\tilde{u}_{\rm%20ref}^{\rm%20to}=\tilde{u}_{\rm%20ref}^{\rm%20sc}+u_{\rm%20ref}^{\rm%20inc}](https://latex.codecogs.com/png.image?\dpi{110}\tilde{u}_{\rm%20ref}^{\rm%20to}=\tilde{u}_{\rm%20ref}^{\rm%20sc}+u_{\rm%20ref}^{\rm%20inc}). 
+
+We now stimulate the impenetrable obstacle ![D](https://latex.codecogs.com/png.image?\dpi{110}D)
+
+
+
 
 [comment]: <> (https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)
