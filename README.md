@@ -31,9 +31,9 @@ We model the (unknown) impenetrable obstacle by the open bounded domain ![D](htt
 
 where ![\mathcal{B}u_{D}^{\rm%20to}](https://latex.codecogs.com/png.image?\dpi{110}\mathcal{B}u_{D}^{\rm%20to}) is either Dirichlet or impedance boundary conditions. Let ![u_{D}^{\infty}(\hat{x},\hat{z})](https://latex.codecogs.com/png.image?\dpi{110}u_{D}^{\infty}(\hat{x},\hat{z})) be the far-field pattern of ![u_{D}^{\rm%20sc}](https://latex.codecogs.com/png.image?\dpi{110}u_{D}^{\rm%20sc}). The inverse problem is to determine ![D](https://latex.codecogs.com/png.image?\dpi{110}D) from the knowledge of ![u_{D}^{\infty}(\hat{x},\hat{z})](https://latex.codecogs.com/png.image?\dpi{110}u_{D}^{\infty}(\hat{x},\hat{z})) for all ![\hat{x},\hat{z}\in\mathcal{S}^{d-1}](https://latex.codecogs.com/png.image?\dpi{110}\hat{x},\hat{z}\in\mathcal{S}^{d-1}). 
 
-# Algorithm # 
+# Simulation of measurements # 
 
-We now explain the algorithm. In our simulation, we take ![A\equiv%20I](https://latex.codecogs.com/png.image?\dpi{110}A\equiv%20I) and 
+In our simulation, we take ![A\equiv%20I](https://latex.codecogs.com/png.image?\dpi{110}A\equiv%20I) and 
 <div align="center">
   
 ![n(x,y)=1+e^{-\frac{1}{1+x^{2}+y^{2}}}](https://latex.codecogs.com/png.image?\dpi{110}n(x,y)=1+e^{-\frac{1}{1+x^{2}+y^{2}}}) for ![x^{2}+y^{2}<1](https://latex.codecogs.com/png.image?\dpi{110}x^{2}+y^{2}<1), otherwise ![n(x,y)=1](https://latex.codecogs.com/png.image?\dpi{110}n(x,y)=1)
@@ -79,7 +79,18 @@ and the far-field pattern ![u_{D}^{\infty}](https://latex.codecogs.com/png.image
 ![\tilde{u}_{D}^{\rm%20sc}(x,y)=\frac{e^{\frac{\mathbf{i}\pi}{4}}}{\sqrt{8\pi%20k}}\frac{e^{\mathbf{i}k|(x,y)|}}{|(x,y)|^{\frac{1}{2}}}\tilde{u}_{D}^{\infty}(\frac{(x,y)}{|(x,y)|})](https://latex.codecogs.com/png.image?\dpi{110}\tilde{u}_{D}^{\rm%20sc}(x,y)=\frac{e^{\frac{\mathbf{i}\pi}{4}}}{\sqrt{8\pi%20k}}\frac{e^{\mathbf{i}k|(x,y)|}}{|(x,y)|^{\frac{1}{2}}}\tilde{u}_{D}^{\infty}\left(\frac{(x,y)}{|(x,y)|}\right)) on ![|(x,y)|=3](https://latex.codecogs.com/png.image?\dpi{110}|(x,y)|=3). 
 </div>
 
-Here, we choose ![|(x,y)|=3](https://latex.codecogs.com/png.image?\dpi{110}|(x,y)|=3) rather than ![|(x,y)|=4](https://latex.codecogs.com/png.image?\dpi{110}|(x,y)|=4) to reduce the effect of the reflected wave from the boudnary. 
+Here, we choose ![|(x,y)|=3](https://latex.codecogs.com/png.image?\dpi{110}|(x,y)|=3) rather than ![|(x,y)|=4](https://latex.codecogs.com/png.image?\dpi{110}|(x,y)|=4) to reduce the effect of the reflected wave from the boudnary. Finally, we approximate the far-field operator ![F_{D}](https://latex.codecogs.com/png.image?\dpi{110}F_{D}) as an ![M\times%20M](https://latex.codecogs.com/png.image?\dpi{110}M\times%20M) matrix: 
+</div>
+<div align="center">
+  
+![\tilde{F}_{D}=(F_{j\ell})_{j,\ell=1}^{M}](https://latex.codecogs.com/png.image?\dpi{110}\tilde{F}_{D}=(F_{j\ell})_{j,\ell=1}^{M}) 
+</div>
+
+with the far-field pattern ![\tilde{u}_{D}^{\infty}(\theta_{j},\theta_{\ell})](https://latex.codecogs.com/png.image?\dpi{110}\tilde{u}_{D}^{\infty}(\theta_{j},\theta_{\ell})) for ![j,\ell=1,\cdots,M](https://latex.codecogs.com/png.image?\dpi{110}j,\ell=1,\cdots,M) at equidistantly distributed directions ![\theta_{j}=2\pi%20j/M](https://latex.codecogs.com/png.image?\dpi{110}\theta_{j}=2\pi%20j/M). In our numerical simulation, we choose ![M=24](https://latex.codecogs.com/png.image?\dpi{110}M=24). 
+
+# Numerical reconstriction # 
+
+
 
 
 [comment]: <> (https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)
