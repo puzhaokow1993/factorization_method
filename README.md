@@ -41,7 +41,7 @@ We now explain the algorithm. In our simulation, we take ![A\equiv%20I](https://
 
 which has jump discontinuities at ![x^{2}+y^{2}=1](https://latex.codecogs.com/png.image?\dpi{110}x^{2}+y^{2}=1). 
 
-We first need to find suitable incident fields to stimulate the impenetrable obstacle. We restrict the computational domain in the ball ![x^{2}+y^{2}<4](https://latex.codecogs.com/png.image?\dpi{110}x^{2}+y^{2}<4) and approximate the Sommerfeld radiation condition by the impedance condition: 
+We first need to find suitable incident fields to stimulate the impenetrable obstacle (without considering the impenetrable obstacle ![D](https://latex.codecogs.com/png.image?\dpi{110}D)). We restrict the computational domain in the ball ![x^{2}+y^{2}<4](https://latex.codecogs.com/png.image?\dpi{110}x^{2}+y^{2}<4) and approximate the Sommerfeld radiation condition by the impedance condition: 
 <div align="center">
   
 ![\Delta\tilde{u}_{\rm%20ref}^{\rm%20sc}+k^{2}n\tilde{u}_{\rm%20ref}^{\rm%20sc}=k^{2}(1-n)u_{\rm%20ref}^{\rm%20inc}](https://latex.codecogs.com/png.image?\dpi{110}\Delta\tilde{u}_{\rm%20ref}^{\rm%20sc}+k^{2}n\tilde{u}_{\rm%20ref}^{\rm%20sc}=k^{2}(1-n)u_{\rm%20ref}^{\rm%20inc}) for ![x^{2}+y^{2}<4](https://latex.codecogs.com/png.image?\dpi{110}x^{2}+y^{2}<4)
@@ -53,9 +53,33 @@ We first need to find suitable incident fields to stimulate the impenetrable obs
 
 We solve this boundary value problem FEM with mesh size ![\le0.1](https://latex.codecogs.com/png.image?\dpi{110}\le0.1). Then we can approximate the total field by ![\tilde{u}_{\rm%20ref}^{\rm%20to}=\tilde{u}_{\rm%20ref}^{\rm%20sc}+u_{\rm%20ref}^{\rm%20inc}](https://latex.codecogs.com/png.image?\dpi{110}\tilde{u}_{\rm%20ref}^{\rm%20to}=\tilde{u}_{\rm%20ref}^{\rm%20sc}+u_{\rm%20ref}^{\rm%20inc}). 
 
-We now stimulate the impenetrable obstacle ![D](https://latex.codecogs.com/png.image?\dpi{110}D)
+We now stimulate the impenetrable obstacle ![D](https://latex.codecogs.com/png.image?\dpi{110}D) by using the incident field 
+<div align="center">
+  
+![\tilde{u}_{I,n}^{\rm%20inc}(x,\hat{z})=\overline{\tilde{u}_{\rm%20ref}^{\rm%20to}(x,-\hat{z})}](https://latex.codecogs.com/png.image?\dpi{110}\tilde{u}_{I,n}^{\rm%20inc}(x,\hat{z})=\overline{\tilde{u}_{\rm%20ref}^{\rm%20to}(x,-\hat{z})}) 
+</div>
 
+and the approximated scattered field is obtained by solving 
+<div align="center">
+  
+![\Delta\tilde{u}_{D}^{\rm%20sc}+k^{2}n\tilde{u}_{D}^{\rm%20sc}=k^{2}(1-n)\tilde{u}_{I,n}^{\rm%20inc}](https://latex.codecogs.com/png.image?\dpi{110}\Delta\tilde{u}_{D}^{\rm%20sc}+k^{2}n\tilde{u}_{D}^{\rm%20sc}=k^{2}(1-n)\tilde{u}_{I,n}^{\rm%20inc}) for ![x^{2}+y^{2}<4](https://latex.codecogs.com/png.image?\dpi{110}x^{2}+y^{2}<4) with ![(x,y)\notin%20D](https://latex.codecogs.com/png.image?\dpi{110}(x,y)\notin%20D)
+</div>
+<div align="center">
+  
+![\mathcal{B}(\tilde{u}_{D}^{\rm%20sc}+\tilde{u}_{I,n}^{\rm%20sc})=0](https://latex.codecogs.com/png.image?\dpi{110}\mathcal{B}(u_{D}^{\rm%20sc}+\tilde{u}_{I,n}^{\rm%20sc})=0) on ![\partial%20D](https://latex.codecogs.com/png.image?\dpi{110}\partial%20D)
+</div>
+<div align="center">
+  
+![\partial_{r}\tilde{u}_{D}^{\rm%20sc}-\mathbf{i}k\tilde{u}_{D}^{\rm%20sc}=0](https://latex.codecogs.com/png.image?\dpi{110}\partial_{r}\tilde{u}_{D}^{\rm%20sc}-\mathbf{i}k\tilde{u}_{D}^{\rm%20sc}=0) for ![x^{2}+y^{2}=4](https://latex.codecogs.com/png.image?\dpi{110}x^{2}+y^{2}=4)
+</div>
 
+and the far-field pattern ![u_{D}^{\infty}](https://latex.codecogs.com/png.image?\dpi{110}u_{D}^{\infty}) of ![u_{D}^{\rm%20sc}](https://latex.codecogs.com/png.image?\dpi{110}u_{D}^{\rm%20sc}) is approximated by 
+<div align="center">
+  
+![\tilde{u}_{D}^{\rm%20sc}(x,y)=\frac{e^{\frac{\mathbf{i}\pi}{4}}}{\sqrt{8\pi%20k}}\frac{e^{\mathbf{i}k|(x,y)|}}{|(x,y)|^{\frac{1}{2}}}\tilde{u}_{D}^{\infty}(\frac{(x,y)}{|(x,y)|})](https://latex.codecogs.com/png.image?\dpi{110}\tilde{u}_{D}^{\rm%20sc}(x,y)=\frac{e^{\frac{\mathbf{i}\pi}{4}}}{\sqrt{8\pi%20k}}\frac{e^{\mathbf{i}k|(x,y)|}}{|(x,y)|^{\frac{1}{2}}}\tilde{u}_{D}^{\infty}\left(\frac{(x,y)}{|(x,y)|}\right)) on ![|(x,y)|=3](https://latex.codecogs.com/png.image?\dpi{110}|(x,y)|=3). 
+</div>
+
+Here, we choose ![|(x,y)|=3](https://latex.codecogs.com/png.image?\dpi{110}|(x,y)|=3) rather than ![|(x,y)|=4](https://latex.codecogs.com/png.image?\dpi{110}|(x,y)|=4) to reduce the effect of the reflected wave from the boudnary. 
 
 
 [comment]: <> (https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)
