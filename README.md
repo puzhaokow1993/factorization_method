@@ -136,6 +136,13 @@ where ![|\Lambda_{\Re}|](https://latex.codecogs.com/png.image?\dpi{110}|\Lambda_
 ![\tilde{F}_{\sharp}=Q\Lambda%20Q^{-1}=Q\Lambda%20Q^{*}](https://latex.codecogs.com/png.image?\dpi{110}\tilde{F}_{\sharp}=Q\Lambda%20Q^{-1}=Q\Lambda%20Q^{*}). 
 </div>
 
-For each 
+For each ![z](https://latex.codecogs.com/png.image?\dpi{110}z) from the grid ![G](https://latex.codecogs.com/png.image?\dpi{110}G), the indicator is given by 
+<div align="center">
+  
+![W(z):=\left(\sum_{\ell=1}^{M}\frac{|Q_{i}^{\intercal}r_{z}|^{2}}{\lambda_{i}}\right)^{-1}](https://latex.codecogs.com/png.image?\dpi{110}W(z):=\left(\sum_{\ell=1}^{M}\frac{|Q_{i}^{\intercal}r_{z}|^{2}}{\lambda_{i}}\right)^{-1}). 
+</div>
+
+where ![\Lambda={\rm%20diag}(\lambda_{1},\cdots,\lambda_{M})](https://latex.codecogs.com/png.image?\dpi{110}\Lambda={\rm%20diag}(\lambda_{1},\cdots,\lambda_{M})) and ![Q=(Q_{1},\cdots,Q_{M})](https://latex.codecogs.com/png.image?\dpi{110}Q=(Q,\cdots,Q_{M})). 
+
 
 [comment]: <> (https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)
