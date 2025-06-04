@@ -1,0 +1,99 @@
+%main program
+global partition
+partition = 24;
+k = 9;
+gridsize = 0.1;
+F = zeros(partition,partition);
+% noise = 0.10; % noise percentage
+
+angle = 2*pi/partition;
+[far,XY,utotal] = incident(k,angle);
+F(1,:) = far;
+clearvars far
+utotal_tensor = zeros(length(transpose(utotal)),partition);
+utotal_tensor(:,1) = utotal;
+
+for count=2:partition
+    angle = 2*pi*count/partition;
+    [far,~,utotal] = incident(k,angle);
+    F(count,:) = far;
+    clearvars far
+    utotal_tensor(:,count) = utotal;
+end
+
+% % generate noise
+% for count = 1:partition
+%     for count1 = 1:partition
+%         F(count,count1) = F(count,count1) + normrnd(0,abs(F(count,count1))*noise);
+%     end
+% end
+
+[realQ,realD] = eig((F+F')/2);
+[compQ,compD] = eig((F-F')/(2*1i));
+Fsharp = realQ*abs(realD)*(realQ') + compQ*abs(compD)*(compQ');
+[Q,D] = eig(Fsharp);
+clearvars realQ realD compQ compD
+
+aux_model = createpde(1);
+g = @grid;
+geometryFromEdges(aux_model,g);
+generateMesh(aux_model, 'Hmax',gridsize);
+points = aux_model.Mesh.Nodes;
+r = zeros(partition,length(points));
+
+for count=1:partition
+    angle = 2*pi*count/partition;
+    G = scatteredInterpolant(transpose(XY(1,:)),transpose(XY(2,:)),utotal_tensor(:,count),'natural');
+    for num=1:length(points)
+        r(count,num) = G(points(1,num), points(2,num));
+    end
+    clearvars G
+end
+
+P = (transpose(Q))*r;
+W0 = zeros(length(points),1);
+for num=1:length(points)
+    for count=1:partition
+        W0(num,1) = W0(num,1) + ((abs(P(count,num)))^2)/D(count,count);
+    end
+end
+W = abs(1./W0);
+
+figure
+pdeplot(aux_model,'XYData',W,'Mesh','off')
+colormap(jet)
+xlabel 'x'
+ylabel 'y'
+hold on
+
+%plot the actual obstacle
+t = linspace(0,2*pi,100);
+x = 0.5*(cos(t));
+y = 0.5*(sin(t));
+plot(x,y,'color','k')
+
+% -------------------- Nested functions --------------------
+% no obstacle
+    function [x,y] = grid(bs,s) 
+    if nargin == 0  
+        x = 4; % 8 segments
+        return 
+    end
+    if nargin == 1
+        % circle with radius 1
+        dl = [0      pi/2   pi       3*pi/2
+              pi/2    pi     3*pi/2   2*pi
+              1       1      1        1 % region label to left (anticlockwise)
+              0       0      0        0]; % region label to right (anticlockwise)
+        x = dl(:,bs);   
+        return 
+    end 
+    x = zeros(size(s)); 
+    y = zeros(size(s)); 
+    if numel(bs) == 1 % Does bs need scalar expansion?
+        bs = bs*ones(size(s)); % Expand bs
+    end
+    cbs = find(bs <= 4); 
+    x(cbs) = cos(s(cbs));
+    y(cbs) = sin(s(cbs));
+    end
