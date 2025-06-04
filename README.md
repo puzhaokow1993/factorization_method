@@ -112,7 +112,15 @@ where ![\sigma_{1},\cdots,\sigma_{M}](https://latex.codecogs.com/png.image?\dpi{
 
 # Numerical reconstriction for impedance obstacles # 
 
-We now explain the algorithm which used to reconstruct impedancec obstacles (which is a general case including sound-soft, sound-hard and Robin obstacles). In this case, the matrix ![\tilde{F}_{D}](https://latex.codecogs.com/png.image?\dpi{110}\tilde{F}_{D}) is not necessarily diagonalizable. However, we see that 
+We now explain the algorithm which used to reconstruct impedancece obstacles (which is a general case including sound-soft, sound-hard and Robin obstacles), i.e. ![\mathcal{B}=\partial_{\nu}+\lambda](https://latex.codecogs.com/png.image?\dpi{110}\mathcal{B}=\partial_{\nu}+\lambda). We consider
+<div align="center">
+  
+![\lambda(x)=5+10\cos(x^{2}y)\mathbf{i}](https://latex.codecogs.com/png.image?\dpi{110}\lambda(x)=5+10\cos(x^{2}y)\mathbf{i}) for ![xy^{2}<0](https://latex.codecogs.com/png.image?\dpi{110}xy^{2}<0) and ![\lambda(x)=2\sin(x^{3})-5\mathbf{i}](https://latex.codecogs.com/png.image?\dpi{110}\lambda(x)=2\sin(x^{3})-5\mathbf{i}) for ![xy^{2}\ge0](https://latex.codecogs.com/png.image?\dpi{110}xy^{2}\ge0)
+</div>
+
+in our simulation 
+
+In this case, the matrix ![\tilde{F}_{D}](https://latex.codecogs.com/png.image?\dpi{110}\tilde{F}_{D}) is not necessarily diagonalizable. However, we see that 
 <div align="center">
   
 ![\Re\tilde{F}_{D}:=\frac{1}{2}(\tilde{F}_{D}+\tilde{F}_{D}^{*})](https://latex.codecogs.com/png.image?\dpi{110}\Re\tilde{F}_{D}:=\frac{1}{2}(\tilde{F}_{D}+\tilde{F}_{D}^{*})) and ![\Im\tilde{F}_{D}:=\frac{1}{2\mathbf{i}}(\tilde{F}_{D}-\tilde{F}_{D}^{*})](https://latex.codecogs.com/png.image?\dpi{110}\Im\tilde{F}_{D}:=\frac{1}{2\mathbf{i}}(\tilde{F}_{D}-\tilde{F}_{D}^{*}))
@@ -143,6 +151,9 @@ For each ![z](https://latex.codecogs.com/png.image?\dpi{110}z) from the grid ![G
 </div>
 
 where ![\Lambda={\rm%20diag}(\lambda_{1},\cdots,\lambda_{M})](https://latex.codecogs.com/png.image?\dpi{110}\Lambda={\rm%20diag}(\lambda_{1},\cdots,\lambda_{M})) and ![Q=(Q_{1},\cdots,Q_{M})](https://latex.codecogs.com/png.image?\dpi{110}Q=(Q,\cdots,Q_{M})). 
+
+
+
 
 
 [comment]: <> (https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)
