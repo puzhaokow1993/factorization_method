@@ -88,8 +88,31 @@ Here, we choose ![|(x,y)|=3](https://latex.codecogs.com/png.image?\dpi{110}|(x,y
 
 with the far-field pattern ![\tilde{u}_{D}^{\infty}(\theta_{j},\theta_{\ell})](https://latex.codecogs.com/png.image?\dpi{110}\tilde{u}_{D}^{\infty}(\theta_{j},\theta_{\ell})) for ![j,\ell=1,\cdots,M](https://latex.codecogs.com/png.image?\dpi{110}j,\ell=1,\cdots,M) at equidistantly distributed directions ![\theta_{j}=2\pi%20j/M](https://latex.codecogs.com/png.image?\dpi{110}\theta_{j}=2\pi%20j/M). In our numerical simulation, we choose ![M=24](https://latex.codecogs.com/png.image?\dpi{110}M=24). 
 
-# Numerical reconstriction # 
+# Numerical reconstriction for sound-soft, sound-hard or Robin obstacles # 
 
+Having constructed the far-field matrix ![\tilde{F}_{D}](https://latex.codecogs.com/png.image?\dpi{110}\tilde{F}_{D}), we now explain the algorithm which used to reconstruct sound-soft (Dirichlet) obstacles. The case for sound-hard (Neumann) obstacles, even for Robin obstacles, are similar. Choose a grid ![G](https://latex.codecogs.com/png.image?\dpi{110}G) of points ![z\in\mathbb{R}^{2}](https://latex.codecogs.com/png.image?\dpi{110}z\in\mathbb{R}^{2}) such that the unknown obstacle is in the convex hull of the grid points. We perform the singular value decomposition of ![\tilde{F}_{D}=U\Sigma%20V^{*}](https://latex.codecogs.com/png.image?\dpi{110}\tilde{F}_{D}=U\Sigma%20V^{*}). For each ![z](https://latex.codecogs.com/png.image?\dpi{110}z) from the grid ![G](https://latex.codecogs.com/png.image?\dpi{110}G), we compute the vector 
+<div align="center">
+  
+![r_{z}=(r_{z}^{1},\cdots,r_{z}^{M})^{\intercal}=(\tilde{u}_{\rm%20ref}^{\rm%20to}(z,-\theta_{1}),\cdots,\tilde{u}_{\rm%20ref}^{\rm%20to}(z,-\theta_{M}))^{\intercal}](https://latex.codecogs.com/png.image?\dpi{110}r_{z}=(r_{z}^{1},\cdots,r_{z}^{M})^{\intercal}=(\tilde{u}_{\rm%20ref}^{\rm%20to}(z,-\theta_{1}),\cdots,\tilde{u}_{\rm%20ref}^{\rm%20to}(z,-\theta_{M}))^{\intercal}) 
+</div>
+
+Next, we compute the vector spanned by ![V](https://latex.codecogs.com/png.image?\dpi{110}V): 
+<div align="center">
+  
+![P_{\ell}^{(z)}=\sum_{j=1}^{M}V_{j\ell}r_{z}^{j}](https://latex.codecogs.com/png.image?\dpi{110}P_{\ell}^{(z)}=\sum_{j=1}^{M}V_{j\ell}r_{z}^{j}). 
+</div>
+
+Finally, we calculate the value of the indicator 
+<div align="center">
+  
+![W(z):=\left(\sum_{\ell=1}^{M}\frac{|P_{\ell}^{(z)}|^{2}}{\sigma_{\ell}}\right)^{-1}](https://latex.codecogs.com/png.image?\dpi{110}W(z):=\left(\sum_{\ell=1}^{M}\frac{|P_{\ell}^{(z)}|^{2}}{\sigma_{\ell}}\right)^{-1}). 
+</div>
+
+where ![\sigma_{1},\cdots,\sigma_{M}](https://latex.codecogs.com/png.image?\dpi{110}\sigma_{1},\cdots,\sigma_{M}) are the singular values in ![\Sigma](https://latex.codecogs.com/png.image?\dpi{110}\Sigma), and plot the contour lines of ![z\mapsto%20W(z)](https://latex.codecogs.com/png.image?\dpi{110}z\mapsto%20W(z)). 
+
+# Numerical reconstriction for impedance obstacles # 
+
+We now explain the algorithm which used to reconstruct impedancec obstacles (which is a general case including sound-soft, sound-hard and Robin obstacles). 
 
 
 
